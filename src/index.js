@@ -47,6 +47,9 @@ module.exports = function toReadable(number) {
             if (units.hasOwnProperty(numberToString.substr(1, 2))) {
                 return `${units[numberToString[0] * 100]} ${units[Number(numberToString.substr(1, 2))]}`
             } else {
+                if (Number(numberToString[1])===0){
+                    return `${units[numberToString[0] * 100]} ${units[numberToString[2] * 1]}`
+                }
                 return `${units[numberToString[0] * 100]} ${units[numberToString[1] * 10]} ${units[numberToString[2] * 1]}`
             }
         }
